@@ -39,6 +39,21 @@
                                         @enderror
                                     </div>
                                 </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="">Descripcion</label><b> (*)</b>
+
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fas fa-align-left"></i></span>
+                                            </div>
+                                            <input type="text" class="form-control" value="{{old('descripcion', $configuracion->descripcion ?? '')}}" name="descripcion" placeholder="Escribir descripcion" required>
+                                        </div>
+                                        @error('nombre')
+                                        <small style="color: red">{{$message}}</small>
+                                        @enderror
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
