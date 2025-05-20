@@ -1,61 +1,103 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+## Analisis
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+1. Análisis y Planificación
 
-## About Laravel
+-   Definir claramente las entidades de la base de datos (ej. registros financieros, usuarios, roles).
+-   Diagramar el flujo de datos desde la carga del archivo CSV hasta su visualización.
+-   Especificar qué roles tendrán acceso a la reportería y los datos.
+-   Investigar formatos de reportería en Laravel (ej. exportación a PDF, gráficos interactivos)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+2. Configuración y Desarrollo Inicial
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+-   Instalar Laravel y configurar la base de datos.
+-   Crear modelos y migraciones para almacenar los datos cargados desde el CSV.
+-   Desarrollar controladores y rutas para gestionar la carga y procesamiento de archivos.
+-   Implementar vistas iniciales con Laravel Blade y AdminLTE para la interfaz
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+3. Implementación de la Funcionalidad Principal
 
-## Learning Laravel
+-   Desarrollar el módulo de carga de archivos CSV, incluyendo validación de formato.
+-   Crear el mecanismo para leer y almacenar los datos en la base de datos.
+-   Implementar paginación y filtros en la visualización de los datos cargados.
+-   Crear reportes dinámicos y exportación a formatos (PDF, Excel).
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+4. Optimización y Seguridad
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+-   Mejorar la seguridad con políticas de acceso y autenticación con Laravel UI o Breeze.
+-   Optimizar las consultas de base de datos para mejorar rendimiento en grandes volúmenes de información.
+-   Realizar pruebas de carga y debugging para asegurar estabilidad.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+5. Despliegue y Mantenimiento
 
-## Laravel Sponsors
+-   Configurar el entorno de producción.
+-   Desplegar la aplicación en un servidor web.
+-   Establecer monitoreo y mantenimiento para futuras actualizaciones.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+---
 
-### Premium Partners
+1. Requerimientos Funcionales
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+-   Carga de archivos CSV: Permitir la importación de datos financieros y administrativos desde archivos CSV.
+-   Gestión de usuarios y roles: Autenticación y autorización de usuarios con diferentes permisos (sostenedores, directores, docentes, ciudadanía).
+-   Visualización de datos: Mostrar información procesada en tablas con paginación y filtros avanzados.
+-   Reportes gráficos interactivos: Generación de reportes visuales en tiempo real con gráficos de saldo por tipo de subvención y gasto por acción en los EID.
+-   Exportación de informes: Posibilidad de descargar reportes en formatos PDF, Excel y gráficos interactivos.
+-   Historial de auditoría: Registro detallado de cambios realizados en la aplicación (modificaciones de datos, usuarios activos, etc.).
+-   Panel de administración: Un área específica para gestionar configuraciones del sistema, acceso y reportes administrativos.
 
-## Contributing
+2. Requerimientos Técnicos
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+-   Base de datos: MySQL/PostgreSQL para almacenamiento estructurado de la información.
+-   Framework: Laravel en su última versión, aprovechando Eloquent para la gestión de datos.
+-   Frontend: Laravel Blade con integración de AdminLTE para mejorar la UI/UX.
+-   Procesamiento de datos: Validación y limpieza de datos importados desde archivos CSV.
+-   Seguridad: Políticas de autenticación con Laravel UI o Breeze, protección contra ataques SQL Injection y XSS.
+-   Despliegue: Configuración en servidor Linux con soporte para despliegue continuo mediante Git.
 
-## Code of Conduct
+3. Plan de Acción
+   Fase 1 – Configuración Inicial
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+-   Configuración del entorno de desarrollo y base de datos.
+-   Definición de modelos y migraciones en Laravel.
+-   Implementación de autenticación y roles de usuario.
+    Fase 2 – Desarrollo de la Funcionalidad Principal
+-   Creación del módulo de carga de archivos CSV con validación.
+-   Desarrollo de vistas y controladores para visualización de datos.
+-   Implementación de reportes dinámicos.
+    Fase 3 – Optimización y Seguridad
+-   Auditoría del sistema y medidas de seguridad.
+-   Optimización de consultas y rendimiento de la aplicación.
+-   Pruebas de carga para garantizar estabilidad.
+    Fase 4 – Despliegue y Monitoreo
+-   Configuración del entorno de producción.
+-   Pruebas finales y ajustes según feedback.
+-   Implementación de sistema de monitoreo y mantenimiento
 
-## Security Vulnerabilities
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+-------------
 
-## License
+## Objetivo del MVP
+Crear una plataforma web donde los usuarios puedan:
+- Subir archivos CSV con información de administración educativa.
+- Almacenar los datos en una base de datos y visualizarlos en una tabla.
+- Filtrar y paginar los datos para una mejor gestión.
+- Generar reportes básicos de la información cargada.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+### Plan de Acción para el MVP
+1. Configuración del entorno y base de datos
+- Definir modelo en Laravel: Crear una tabla registros que almacene la información importada.
+- Migraciones: Generar migraciones para estructurar la base de datos.
+- Factory y Seeder: Crear datos de prueba para verificar la funcionalidad.
+2. Implementación del módulo de carga CSV
+- Formulario de carga en la página de index.
+- Validación de archivos antes de subirlos (formato CSV, tamaño, estructura).
+- Procesar datos con Laravel Collections y almacenarlos en la base de datos.
+3. Visualización de datos en tabla
+- Usar Laravel Blade + AdminLTE para mostrar datos importados.
+- Añadir paginación y filtros para mejorar la usabilidad.
+- Botón de descarga/exportación a Excel/PDF.
+4. Seguridad y pruebas
+- Autenticación básica con Laravel UI.
+- Protección contra inyección SQL y validación de inputs.
+- Pruebas unitarias con PHPUnit para validar funcionalidad clave.
